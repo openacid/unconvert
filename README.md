@@ -1,13 +1,23 @@
-[![Build Status](https://travis-ci.org/mdempsky/unconvert.svg?branch=master)](https://travis-ci.org/mdempsky/unconvert)
+[![Build Status](https://travis-ci.org/openacid/unconvert.svg?branch=master)](https://travis-ci.org/openacid/unconvert)
 
 # About
+
+> This fork from github.com/mdempsky/unconvert fixed issues with the latest
+> "golang.org/x/tools/go/packages" in go-1.10.x
+>
+> 1. `unconvert` relies on `golang.org/x/tools/go/packages`.
+> 1. `go get` in a clean env pulls the latest `golang.org/x/tools/go/packages`.
+> 1. The latest `golang.org/x/tools/go/packages`(the master) is for latest go(1.12.x) and it assumes that `go list` is able to accept the argument `-compiled`.
+> 1. An older go(e.g. 1.10.x) does not support `-compiled` for `go list`. Thus install unconvert in a clean go-1.10.x env results in an error like above.
+>
+> By drdr.xp@gmail.com
 
 The unconvert program analyzes Go packages to identify unnecessary
 type conversions; i.e., expressions T(x) where x already has type T.
 
 # Install
 
-    $ go get github.com/mdempsky/unconvert
+    $ go get github.com/openacid/unconvert
 
 # Usage
 
